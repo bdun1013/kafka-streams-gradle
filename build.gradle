@@ -1,0 +1,34 @@
+plugins {
+    id "java"
+
+    id 'org.springframework.boot' version '2.1.4.RELEASE'
+    id "io.spring.dependency-management" version "1.0.7.RELEASE"
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:Greenwich.RELEASE"
+    }
+}
+
+dependencies {
+    implementation group: "org.springframework.boot", name: "spring-boot-starter-web"
+    implementation group: "org.springframework.cloud", name: "spring-cloud-stream"
+    implementation group: "org.springframework.cloud", name: "spring-cloud-stream-binder-kafka"
+    implementation group: "org.springframework.cloud", name: "spring-cloud-stream-binder-kafka-streams"
+    implementation group: "org.springframework.kafka", name: "spring-kafka"
+
+
+    testImplementation group: "junit", name: "junit"
+}
+
+bootJar {
+    version =  "0.1.0"
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
