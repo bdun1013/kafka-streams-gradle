@@ -1,0 +1,5 @@
+swagger:
+  application:
+    path: /
+  documentation:
+    path: /
